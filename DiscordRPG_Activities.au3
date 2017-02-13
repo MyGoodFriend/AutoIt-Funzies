@@ -1,5 +1,6 @@
 ; Script by MyGoodFriend
 ; https://github.com/MyGoodFriend
+; DiscordRPG bot script
 
 #include <Array.au3>
 
@@ -43,7 +44,6 @@ WEnd
 Func main()
 
 	While 1
-
 		Activities()
 		If $a > 0 Then
 			; Go on an adventure $a-1 times
@@ -64,18 +64,18 @@ EndFunc
 
 ; Handles the activities
 Func Activities()
-		ActivateWindow()
+	ActivateWindow()
 
-		If WinActive($win) Then
-			For $i = 0 To 3
-				Send($prefix & $commands[$i])
-				Sleep(500)
-				Send("{ENTER}")
-				Sleep(500)
-			Next
-		EndIf
-		$n = $n + 1 ; Count number of Activities
-		ConsoleWrite("Activity#: " & $n & @CRLF)
+	If WinActive($win) Then
+		For $i = 0 To 3
+			Send($prefix & $commands[$i])
+			Sleep(500)
+			Send("{ENTER}")
+			Sleep(500)
+		Next
+	EndIf
+	$n = $n + 1 ; Count number of Activities
+	ConsoleWrite("Activity#: " & $n & @CRLF)
 EndFunc
 
 ; Handles Healing
@@ -93,18 +93,18 @@ EndFunc
 
 ; 1 Adventure
 Func Adventure()
-		ActivateWindow()
+	ActivateWindow()
 
-		If WinActive($win) Then
-			Send($prefix & $commands[4]) ; command 4 is 'adv' (Adventure)
-			Sleep(500)
-			Send("{ENTER}")
-			Sleep(500)
-		EndIf
+	If WinActive($win) Then
+		Send($prefix & $commands[4]) ; command 4 is 'adv' (Adventure)
+		Sleep(500)
+		Send("{ENTER}")
+		Sleep(500)
+	EndIf
 
-		$an = $an + 1 ; Count number of Adventures
-		ConsoleWrite("Adventure#: " & $an & @CRLF)
-		Sleep(16000) ; 16sec
+	$an = $an + 1 ; Count number of Adventures
+	ConsoleWrite("Adventure#: " & $an & @CRLF)
+	Sleep(16000) ; 16sec
 
 EndFunc
 
