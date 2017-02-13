@@ -44,8 +44,7 @@ Func main()
 
 	While 1
 
-		Activities() ; includes Adventures()
-		; If Adventure is > 0
+		Activities()
 		If $a > 0 Then
 			; Go on an adventure $a-1 times
 			For $i = 0 to $a-1 ; -1 because it assumes user input
